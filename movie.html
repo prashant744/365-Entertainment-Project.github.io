@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./movie.css">
+</head>
+<body>
+
+    <header>
+        <nav class="mynavbar">
+            <a href="./index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v5o-_QEcfIMu1F8GuIrM1JONYAJzmVl3KQ&usqp=CAU" alt="Loading Image" class="mainlogo"></a>
+             <ul class="mynavlist">
+                <li class="mynav-item" id="item1">
+                    <a href="" class="mynav-links">Movies</a>
+                </li>
+                <li class="mynav-item" id="item2">
+                    <a href="" class="mynav-links">TV Series</a>
+                </li>
+                <li class="mynav-item" id="item3">
+                    <a href="" class="mynav-links">Audio</a>
+                </li>
+             </ul>
+        </nav>
+    </header>
+    
+
+    <!-- image Slider -->
+
+    <div class="content">
+        <div class="images">
+            <img src="https://images.indianexpress.com/2018/11/aquaman-759.jpg" alt="Loading Images">
+            <img src="https://i.ytimg.com/vi/gptDzkmSEtk/hqdefault.jpg" alt="Loading Images">
+            <img src="https://www.yashrajfilms.com/images/default-source/Movies/Hrithik-vs-Tiger/hrithik-v-s-tiger47bda6a026f56f7f9f64ff0b00090313.jpg?sfvrsn=9e48c9cc_14" alt="Loading Images">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhZ90EPHXsZhrcam73PhTq87KZr_DTVhStw&usqp=CAU" alt="Loading Images">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbQ3v70kIo8DkUvtr0PzN9QNqpev7kx3ApXA&usqp=CAU" alt="Loading Images">
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <span class="fas fa-angle-left"></span>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <span class="fas fa-angle-right"></span>
+        </div>
+
+        <div class="btm-sliders">
+            <span onclick="btm_slide(1)"></span>
+            <span onclick="btm_slide(2)"></span>
+            <span onclick="btm_slide(3)"></span>    
+            <span onclick="btm_slide(4)"></span>
+            <span onclick="btm_slide(5)"></span>
+        </div>
+    </div>
+
+    <!-- Genre Button -->
+
+    <div class="movie-menu">
+        <button class="menu-button" id="dropbtn"><span id="genreText">Genre</span></button>
+        <div class="dropdown-menu">
+            <a onclick="getMediaPosters(this.text)">All</a>
+            <a onclick="getMediaPosters(this.text)">Action</a>
+            <a onclick="getMediaPosters(this.text)">Drama</a>
+            <a onclick="getMediaPosters(this.text)">Sci-Fi</a>
+            
+        </div>
+        <div onclick="side_slide(-1)" class="dropdown-image">
+            <span class="fa fa-caret-down"></span>
+        </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="menu-text">
+        <input type="text" class="search" id="mysearch" placeholder="Search your favourite movie title" oninput="updateResults()">
+            <span class="fa fa-search"></span>
+    </div> 
+
+    <!-- popular in Action section -->
+
+    <div class="film-section">
+        <div class="film-section-cards" id="movies-action">
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq6AwjMYHi7oAqlT2IUWGJ6xkXaAs0SeE8Sw&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                         Ironman 3
+                    </h4>
+                    <p> Superhero ,Action ,English , Hindi,2013</p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvGZ03cTIkeJLE03w4jdmRZhPUZdB_JtN_JA&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Khuda Haafiz
+                    </h4>
+                    <p> Action, Romance, Hindi, 2020</p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDkZUlI5aysJMcfVycKcKwh5wb1taZZQGM-A&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                         The Avengers
+                    </h4>
+                    <p> Superhero, Action, English, Hindi, 2012</p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-W0a9MBsaoMHMXmM0zUjHey5EmPW_MyLiKQ&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Aiyaary
+                    </h4>
+                    <p> Action, Thriller, Hindi, 2018</p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSirhoAqinrO1KiehMhCwTjRdpt2zsb6is9Jg&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Doctor Strange
+                    </h4>
+                    <p> Superhero, Action, English, Hindi, 2016</p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ZnQXz0QzoEMEVQTkBOWiNsixp46ndpsjYg&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                         Bang Bang
+                    </h4>
+                    <p> Action, Comedy, Hindi, 2014 </p>
+                </div>
+            </div>
+
+            <div class="film-section-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy_XC4XIQipfMSIdhGe6mdg_X_-d7KG1tOcg&usqp=CAU" alt="">
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                         Singham Returns
+                    </h4>
+                    <p> Action, Comedy, Hindi, 2014 </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+     <!-- Popular in Drama Section -->
+     <div class="film-section">
+     <div class="film-section-cards" id="movies-drama">
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAVxS7q6Z7sSlhniYUs4WDnbIV5vxCEmItjw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Shaadisthan
+                </h4>
+                <p> Musical, Drama, Hindi, 2021 </p>
+            </div>
+        </div>
+        <div class="film-section-card" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiEHkjV_9j4AgDTtyzCBPpn_v975D5kQbSkA&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Chhichhore
+                </h4>
+                <p> Drama, Comedy, Hindi, 2019 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfp9Nf-lpGY-avpdT815Ad5c3sLgshxVyiGg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Angrezi Medium
+                </h4>
+                <p> Drama, Comedy, Hindi, 2019</p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2IQriQOqDlV1ogkwCIgvNsh3pvGBohnWtow&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                   Sadak 2
+                </h4>
+                <p>Drama, Romantic, Hindi, 2019</p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtJZ-0RZ5W-qnm-B1SR73iL8bJaigJjRqRlQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Mission Mangal
+                </h4>
+                <p>Drama, Science, Hindi, 2019 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsqvVNKGkj1P_zczB31IBOv_4NVhghg2gKmw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Mulan
+                </h4>
+                <p> Drama, Emotional, Hindi, 2020 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ_iWB8x3kf5AADFTvdokK3jPq0CO0Jijb6Q&usqp=CAU" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Helicopter eela
+                </h4>
+                <p> Drama, Comedy, Hindi, 2018 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJvBdGvgA0Oz_2zAgRKaJIjRn4jDvsO8EdVg&usqp=CAU" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Baadshaho
+                </h4>
+                <p> Drama, Action, Hindi, 2017 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7pVO4_SnHxruGy4tSUUXjY0EpfndY0u4-tw&usqp=CAU" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Haraamkhor
+                </h4>
+                <p> Drama, Comedy, Hindi, 2017 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeA0buU7P7DdyHQO1bkpyLu6sv-enJnm4fUQ&usqp=CAU" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Grahan
+                </h4>
+                <p> Drama, Emotional, Hindi, 2015</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSPATL3LY1pUnYlRRVUX8aednADW28zJ3tbQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Highway
+                </h4>
+                <p> Drama, Emotional, Hindi, 2014</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq8C2q3RB_VQCnGF2LfAXcUHY2LBrwI-F1Iw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The Sniper
+                </h4>
+                <p>Drama, Thriller, Hindi, 2021</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfpncuYUGBZkJ2rEiPDf9qEIzUROKa8-oIlA&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    LootCase
+                </h4>
+                <p>Drama, Love, Hindi, 2021</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdcVQkOhAyEC-7qRHTeuNDVAaOGh5APMYzDw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Dum Lagade AAj
+                </h4>
+                <p>Drama, Comedy, Hindi, 2017</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeOU6V5Al87Fa-9chM4Z1w0CbVFkAqRlp9AQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Love Sonia
+                </h4>
+                <p>Drama, Thriller, Hindi, 2018</p>
+            </div>
+        </div>
+        <div class="film-section-card" id="movies-drama">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6PvkvgvG21c4LVt3iDnCbiDCQEtR3pP5aLw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Mukti Bhawan
+                </h4>
+                <p>Drama, Thriller, Hindi, 2016</p>
+            </div>
+        </div>
+     </div>
+     </div>
+
+    </div>
+
+    <!-- Popular in Sci-Fi Section -->
+    <div class="film-section">
+    <div class="film-section-cards" id="movies-scifi">
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1XOHV2wSFWYHqb-u3FsaQmxjl7gnFlHTwrg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    WandaVision
+                </h4>
+                <p>Superhero, Science Fiction, 2021 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFBfV9a53UnTIZqwcGDUr01WSzIgZW5-8Row&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Agent Carter
+                </h4>
+                <p> Action, Science Fiction, 2015 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyZqSN56YbRXE2gyx2abKUp3cErZaxFITCmQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    LEGEND
+                </h4>
+                <p> Superhero, Science Fiction, 2021 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0dY-ufHfIz57DWVSlDynOFomjz2flZJRXx4hQFNyfO6AdIz1etEKR1D9Pk85m-T0f2LQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The Bad Batch
+                </h4>
+                <p> Action, Science Fiction, 2021 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw1HYU8ucKExTtwD9JttQgDv2Suc0GCdfzKQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Star Wars: Rebeles
+                </h4>
+                <p> Action, Science Fiction, Kids, 2014 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRv_zcH7yo--2akWAeguD-AT8nOxCmnXTC9Q&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    WestWorld
+                </h4>
+                <p> Science Fiction, Drama, 2016 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgyP6YHEjSTOwyDKGspkQdmqy9utar7-bnw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Isle of Dogs
+                </h4>
+                <p>Science Fiction, Comedy, English, 2018 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFoNb6N8F0isaeuWcV9YnzLdpfUVpyEvO1JA&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Star Wars: The Last Jedi
+                </h4>
+                <p> Science Fiction, Action, English, Hindi, 2017 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8f8o5CG00TN4Kpeecd6P01SlMHdCmF3uYbg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Avatar
+                </h4>
+                <p>Science Fiction, Action, English, Hindi, 2009 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-2bnyHf-BKfVTRjkTOuZHK325wCVvcq_DRS8ta6hxmii0Cbsrelc3f2BO4QlVENH_wk&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Godzilla vs Kong
+                </h4>
+                <p> Science Fiction, Action, English, Hindi, 2021 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJYMLEyNgSva_xzbTEm0US_0gopAt2gblTPQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Coma
+                </h4>
+                <p> Science Fiction, Thriller, English, Hindi, 2019 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqhOLlwJ9vjT_zPi8saa5ITD9VG6q2_-8LZA&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Tenet
+                </h4>
+                <p>Science Fiction, Action, English, Hindi, 2020 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_o8eQ7Y--1Hi6OVPNU_PhA-dhYL5z5dRXg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Bloodshot
+                </h4>
+                <p> Science Fiction, Action, English, Hindi, 2020 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtnd4v9pIz6IzVjKKeiyk9hrDu_Kpg0EEOdA&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The Silence
+                </h4>
+                <p> Science Fiction, Thriller, English, Hindi, 2019 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4JVIpWVFoCm8xys3tvB0eWlIx9RdoG-uuhg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Rampage
+                </h4>
+                <p>Science Fiction, Adventure, English, Hindi, 2019 </p>
+            </div>
+        </div>
+        <div class="film-section-card" >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjdW2jubHiXGOTNWbrbvzqhYKPvYsjzFRavw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Alien: Covenant
+                </h4>
+                <p> Science Fiction, Thriller, English, Hindi, 2017 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5txbpieCNdJsK4-kGN2Ynz75tKeqzF4gDyQ&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Bumblebee
+                </h4>
+                <p>Science Fiction, Robot, English, Hindi, 2018 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="images/Sci-Fi/arrival.jpg" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Arrival
+                </h4>
+                <p> Science Fiction, Thriller, English, Hindi, 2016 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDGLBuZ3C79VAGXwmtLiVwBIlxaMLQHRBW6w&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Extinction
+                </h4>
+                <p> Science Fiction, Horror, English, 2018 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo2Q7Yh8LqcwEATShiAsq6WGnNfbLb0IZmFw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    Passengers
+                </h4>
+                <p> Science Fiction, Romance, Hindi, 2016 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhjT-JwlQ9p7AogJbciZTynLibsWT8XbwJSg&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The Predator
+                </h4>
+                <p> Science Fiction, Action, English, Hindi, 2018 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlg_JibHtiqM0iiWWYryKpXj_8mPX8Mf-EGw&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The 5th Wave
+                </h4>
+                <p> Science Fiction, Thriller, English, 2016 </p>
+            </div>
+        </div>
+        <div class="film-section-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0TXjHj_6EwbLfhVNNeep4oNtz5OdWtzcX3Q&usqp=CAU" alt="" />
+            <div class="film-section-card-desc">
+                <h4 class="film-name">
+                    The Martian
+                    </h4>
+                    <p> Science Fiction, Space, English, 2015 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- footer -->
+
+    <footer>
+        <div class="copyright">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-v5o-_QEcfIMu1F8GuIrM1JONYAJzmVl3KQ&usqp=CAU" alt="Loading Image" class="mainlogo" />
+            <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+<script type="text/javascript" src="./index.js"></script>
+<script type="text/javascript" src="./movie.js"></script>
+</html>
