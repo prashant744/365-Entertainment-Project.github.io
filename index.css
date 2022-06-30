@@ -20,7 +20,7 @@ footer{
 
     margin-top: 20px;       
 }
-footer .footer{
+.footer{
 
     display:  flex;
     justify-content: flex-start;
@@ -28,7 +28,7 @@ footer .footer{
     height: 100%;
 
 }
-footer .footer p{
+.footer p{
     margin: 0 10px;
     color: rgb(63, 63, 63);;
     font-size: 16px;
@@ -93,13 +93,13 @@ header .mynavbar .mynavlist .mynav-item#item1 {
 }
 
 .content {
-    height: 500px;
-    width: 100%;
-    /* width: 90%; */
-    /* margin: 0px 90px; */
-    overflow: hidden;
     position: relative;
+	/* top: 20vw; */
+	height: auto;
+	width: 100%;
+	box-sizing: border-box;
 }
+
 
 .content .images {
     height: 100%;
@@ -109,6 +109,7 @@ header .mynavbar .mynavlist .mynav-item#item1 {
 .images img {
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .btm-sliders {
@@ -168,6 +169,20 @@ header .mynavbar .mynavlist .mynav-item#item1 {
     margin: 10px 30px;
 }
 
+
+.film-section {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+/* .film-section > div{
+    height: 100px;
+	width: 47%;
+	margin: 5px 0px;
+} */
+
 .film-section .film-section-header {
     font-size: 1.5em;
     padding: 25px 0px;
@@ -176,9 +191,11 @@ header .mynavbar .mynavlist .mynav-item#item1 {
 
 .film-section .film-section-cards {
     display: flex;
-    margin-top: 10px;
-    flex-wrap: wrap;
+	flex-direction: row;
+	transition: box-shadow ease-in-out 0.1s;
 }
+
+
 
 .film-section .film-section-cards .film-section-card {
     position: relative;
@@ -218,8 +235,6 @@ header .mynavbar .mynavlist .mynav-item#item1 {
 }
 
 .film-section .film-section-cards .film-section-card :hover {
-    height: 110%;
-    width: 110%;
-    position: absolute;
+    box-shadow: 0px 0px 2px 1px white;
 
 }
